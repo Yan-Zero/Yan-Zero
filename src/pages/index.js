@@ -21,6 +21,12 @@ function HomepageHeader() {
             {/* Docusaurus Tutorial - 5min ⏱️ */}
             看看文档
           </Link>
+          &nbsp;&nbsp;
+          <Link
+            className="button button--secondary button--lg"
+            to="friends">
+            看看友链
+          </Link>
         </div>
       </div>
     </header>
@@ -31,8 +37,8 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`言的小站`}
+      description="Nothing">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

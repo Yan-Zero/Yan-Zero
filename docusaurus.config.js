@@ -7,17 +7,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Yan\'s Blog',
-  tagline: '这里没有任何东西，除了苦咖啡的文档。',
+  tagline: '这里言的博客，以及苦咖啡的文档。',
   url: 'https://cc.timedegree.cc/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  deploymentBranch: "main",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'N', // Usually your GitHub org/user name.
-  projectName: 'N', // Usually your repo name.
+  organizationName: 'Yan-Zero', // Usually your GitHub org/user name.
+  projectName: 'Yan-Zero.github.io', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -34,18 +35,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   editUrl:
+        //     'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -57,11 +54,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '言',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'Yan',
+        // logo: {
+        //   alt: '头像',
+        //   src: 'img/logo.png',
+        // },
         items: [
           {
             type: 'doc',
@@ -69,19 +66,27 @@ const config = {
             position: 'left',
             label: '文档',
           },
-          // { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: '博客', position: 'left' },
           {
             href: 'https://github.com/Yan-Zero/Yan-Zero',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            label: '更多',
+            position: 'right',
+            items: [
+              { label: '友链', to: 'friends' },
+              { to: '/about-me', label: '关于我' },
+            ],
+          }
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Yan. Built with Docusaurus.`,
+        // links: [
+        // ],
+        copyright: `Copyright © ${new Date().getFullYear()} Yan.`,
       },
       prism: {
         theme: lightCodeTheme,
