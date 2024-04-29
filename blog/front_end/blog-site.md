@@ -3,7 +3,7 @@ slug: blog-site
 title: 博客创建
 date: 2024-04-28
 authors: Yan
-tags: [front end, blog]
+tags: [front end]
 ---
 
 # 博客创建
@@ -14,17 +14,24 @@ tags: [front end, blog]
 
 ### [Vercel](https://vercel.com/)
 
-网站托管于 Vercel，或许会有 [Netlify](https://www.netlify.com/) 
+网站托管于 Vercel，是[主站](https://cc.timedegree.cc/)
+
+### [Netlify](https://www.netlify.com/) 
+
+Netlify 是[次站](https://yan-zero.netlify.app)，和主站保持同步更新。
 
 ### [Docusaurus](https://docusaurus.io/)
 
 博客基于 Docusaurus，这里感谢 Facebook 工程师的工作
 
-### [Github Pages](https://yan-zero.github.io)
+### [Github Pages](https://pages.github.com/)
 
-Github Pages 版是作为备份的存在，更新理论上会比主项目的要慢……
+Github Pages 版是作为[备份](https://yan-zero.github.io)的存在，更新理论上会比主项目的要慢……
 
-另外为什么只能使用指定名字啊，有点抽象
+命令是 
+```
+cmd /C 'set "GIT_USER=<Name>" && yarn deploy'
+```
 
 ## 页面相关
 

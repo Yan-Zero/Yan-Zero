@@ -13,7 +13,7 @@ export const Friends: Friend[] = [
         description: "warma 痴一只",
         website: 'https://blog.timedegree.cc/',
         avatar: 'https://blog.timedegree.cc/img/warma.gif',
-        tips: "贡献了这个域名（小声）"
+        tips: "贡献了主站(cc.timedegree.cc)的域名(小声)"
     },
 ]
 

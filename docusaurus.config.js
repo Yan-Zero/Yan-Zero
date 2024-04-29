@@ -1,6 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const remarkMath = require("remark-math");
+const rehypeKatex = require("rehype-katex");
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -13,16 +16,11 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+
   deploymentBranch: "main",
+  organizationName: 'Yan-Zero',
+  projectName: 'Yan-Zero.github.io',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Yan-Zero', // Usually your GitHub org/user name.
-  projectName: 'Yan-Zero.github.io', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
@@ -31,22 +29,43 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
+          id: "docs",
+          routeBasePath: 'docs',
+          path: "docs",
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   editUrl:
-        //     'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
-        // },
+        blog: {
+          showReadingTime: true,
+          showLastUpdateTime: true,
+          editUrl:
+            'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      }
+    ]
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl:
+          'https://github.com/Yan-Zero/Yan-Zero/tree/main/',
+        id: "note",
+        routeBasePath: 'note',
+        path: "note",
+        remarkPlugins: [remarkMath],
+        // rehypePlugins: [rehypeKatex],
+      },
     ],
   ],
 
@@ -55,18 +74,37 @@ const config = {
     ({
       navbar: {
         title: 'Yan',
-        // logo: {
-        //   alt: '头像',
-        //   src: 'img/logo.png',
-        // },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
             position: 'left',
-            label: '文档',
+            label: '程序',
+            items: [
+              {
+                docsPluginId: "docs",
+                type: 'doc',
+                docId: 'index',
+                label: '介绍',
+              },
+              {
+                docsPluginId: "docs",
+                type: 'doc',
+                docId: 'coffee/index',
+                label: '苦咖啡',
+              }
+            ]
           },
-          { to: '/blog', label: '博客', position: 'left' },
+          {
+            position: 'left',
+            label: '笔记',
+            items: [
+              {
+                docsPluginId: "note",
+                type: 'doc',
+                docId: 'index',
+                label: '主页',
+              }
+            ]
+          },
           {
             href: 'https://github.com/Yan-Zero/Yan-Zero',
             label: 'GitHub',
@@ -76,16 +114,16 @@ const config = {
             label: '更多',
             position: 'right',
             items: [
-              { label: '友链', to: 'friends' },
+              { to: '/blog', label: '博客' },
+              { to: 'friends', label: '友链' },
               { to: '/about-me', label: '关于我' },
             ],
           }
         ],
+        hideOnScroll: true,
       },
       footer: {
         style: 'dark',
-        // links: [
-        // ],
         copyright: `Copyright © ${new Date().getFullYear()} Yan.`,
       },
       prism: {
@@ -93,6 +131,16 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
 };
 
 module.exports = config;

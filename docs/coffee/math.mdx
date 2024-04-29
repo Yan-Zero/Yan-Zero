@@ -1,0 +1,65 @@
+# Math Module
+
+数学模块，是由多个插件组成的，具体如下。
+
+## Mathematicas
+
+[Mathematica](https://www.wolfram.com/mathematica/) 以其卓越的技术和简易实用广受赞誉，提供了单一整合、持续扩展的系统，涵盖了技术计算的广度和深度—并可以经由任何网页浏览器在云端使用或在所有现代桌面系统的本机上操作。
+(From Wolfram Index)
+
+### mma
+
+> /mma [Expr]
+
+在 Tio.Run 的沙盒上运行 Mathematicas 代码，未联网所以无法使用 Wolfram Alpha。
+
+#### 示例
+```
+/mma Solve[x^2 + x + 1 == -10, {x}]
+```
+
+求解如上的方程。
+
+### mma2tex
+
+> /mma2tex
+
+在执行完 mma 的指令后，可以使用 /mma2tex 显示输出结果。（如果 mma 的标记难以阅读的话）
+
+## TeX
+
+[TeX](https://en.wikipedia.org/wiki/TeX)，是一个由美国计算机科学教授高德纳编写的排版软件。TeX 的 MIME 类型为 application/x-tex，是一款自由软件。它在学术界特别是数学、物理学和计算机科学界十分流行。TEX 被普遍认为是一个优秀的排版工具，尤其是对于复杂数学符号的处理。（From Wikipedia）
+
+### tex
+
+> /tex [Expr]
+
+基于 [mathjax](http://mathjax.org/) 的用于渲染数学公式。
+
+#### 示例
+```
+/tex \sqrt{1919810}
+```
+
+渲染出如下图片：
+
+$$
+\sqrt{1919810}
+$$
+
+### am
+
+> /am [Expr]
+
+[asciimath](https://zmx0142857.gitee.io/note/#math/example/asciimath), 简易版本的公式标记语言
+
+#### 示例
+```
+/am sqrt 114514
+```
+
+渲染出如下图片：
+
+$$
+\sqrt{114514}
+$$

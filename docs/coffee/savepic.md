@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Savepic
 
 从八六继承而来的插件之一，但是用 nonebot2 重写了

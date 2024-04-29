@@ -1,34 +1,6 @@
----
-sidebar_position: 2
----
-
 # 运行代码
 
 各种沙盒中运行代码。
-
-## Mathematicas
-
-[Mathematica](https://www.wolfram.com/mathematica/) 以其卓越的技术和简易实用广受赞誉，提供了单一整合、持续扩展的系统，涵盖了技术计算的广度和深度—并可以经由任何网页浏览器在云端使用或在所有现代桌面系统的本机上操作。
-(From Wolfram Index)
-
-### mma
-
-> /mma [Expr]
-
-在 Tio.Run 的沙盒上运行 Mathematicas 代码，未联网所以无法使用 Wolfram Alpha。
-
-#### 示例
-```
-/mma Solve[x^2 + x + 1 == -10, {x}]
-```
-
-求解如上的方程。
-
-### mma2tex
-
-> /mma2tex
-
-在执行完 mma 的指令后，可以使用 /mma2tex 显示输出结果。（如果 mma 的标记难以阅读的话）
 
 ## Python 
 
