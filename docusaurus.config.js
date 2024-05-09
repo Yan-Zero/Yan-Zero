@@ -64,7 +64,7 @@ const config = {
         routeBasePath: 'note',
         path: "note",
         remarkPlugins: [remarkMath],
-        // rehypePlugins: [rehypeKatex],
+        rehypePlugins: [rehypeKatex],
       },
     ],
   ],
