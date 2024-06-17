@@ -19,7 +19,7 @@ const config = {
 
   deploymentBranch: "main",
   organizationName: 'Yan-Zero',
-  projectName: 'Yan-Zero.github.io',
+  projectName: 'yan-zero.github.io',
 
   i18n: {
     defaultLocale: 'zh-Hans',
