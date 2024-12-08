@@ -16,7 +16,7 @@ tags: [front end]
 
 网站托管于 Vercel，是[主站](https://cc.timedegree.cc/)
 
-### [Netlify](https://www.netlify.com/) 
+### [Netlify](https://www.netlify.com/)
 
 Netlify 是[次站](https://yan-zero.netlify.app)，和主站保持同步更新。
 
@@ -28,8 +28,9 @@ Netlify 是[次站](https://yan-zero.netlify.app)，和主站保持同步更新�
 
 Github Pages 版是作为[备份](https://yan-zero.github.io)的存在，更新理论上会比主项目的要慢……
 
-命令是 
-```
+命令是
+
+```bat
 cmd /C 'set "GIT_USER=<Name>" && yarn deploy'
 ```
 

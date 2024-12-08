@@ -12,7 +12,7 @@ export const Friends: Friend[] = [
         cname: '时度度',
         description: "warma 痴一只",
         website: 'https://blog.timedegree.cc/',
-        avatar: 'https://blog.timedegree.cc/img/warma.gif',
+        avatar: 'https://blog.timedegree.cc/images/warma.gif',
         tips: "贡献了主站(cc.timedegree.cc)的域名(小声)"
     },
 ]
