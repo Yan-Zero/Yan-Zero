@@ -15,6 +15,14 @@ export const Friends: Friend[] = [
         avatar: 'https://blog.timedegree.cc/images/warma.gif',
         tips: "贡献了主站(cc.timedegree.cc)的域名(小声)"
     },
+    {
+        title: 'Life_Checkpoint',
+        cname: 'LDDMiao',
+        description: "HPC & AI",
+        website: 'https://lifecheckpoint.github.io',
+        avatar: 'https://avatars.githubusercontent.com/u/59783101?v=4',
+        tips: "永远喜欢雪村千绘莉————"
+    },
 ]
 
 export type Friend = {
