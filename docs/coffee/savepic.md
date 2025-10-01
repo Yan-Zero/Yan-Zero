@@ -2,6 +2,8 @@
 
 从八六继承而来的插件之一，但是用 nonebot2 重写了
 
+## 指令
+
 ### countpic
 
 计数满足条件的图片数量。
@@ -20,14 +22,12 @@ regexp 是要匹配的正则表达式
 
 \page 是翻页，从1数起
 
-#### 示例
-```
-/listpic 哭.*gif\page2
-```
+#### 示例(listpic)
+
+> /listpic 哭.*gif\page2
 
 匹配图片名字符合 哭.*gif 条件的（例如“我哭死.capoo.gif”“哭晕.kemo.gif”）
 并且返回第2页的结果
-
 
 ### mvpic
 
@@ -44,29 +44,25 @@ regexp 是要匹配的正则表达式
 
 其中，-l 表示本地（群）图，而 -g 表示全局图（要权限）
 
-#### 示例
-```
-/mvpic -g sad.cappo sad.capoo
-```
+储存图片的人与群管理员都可以修改本群的图片名称
+
+#### 示例(mvpic)
+
+> /mvpic -g sad.cappo sad.capoo
 
 在全局图中重命名 sad.cappo 为 sad.capoo
 
-```
-/mvpic -lg sad.capoo
-```
+> /mvpic -lg sad.capoo
 
 新增的标志压缩支持，-lg 等效于 -l -g
 
-```
-/mvpic -l -g sad.capoo
-```
+> /mvpic -l -g sad.capoo
+
 把 sad.capoo 从（当前）群的图改为全局的。
 
-```
-/mvpic sad sdd
-```
-把当前群中的 sad 图重命名为 sdd。
+> /mvpic sad sdd
 
+把当前群中的 sad 图重命名为 sdd。
 
 ### randpic
 
@@ -77,7 +73,6 @@ regexp 是要匹配的正则表达式
 其中，name是可选项，匹配图库中名字含有name的图片，并随机抽取一张返回。
 name是大小写不敏感的。
 
-
 ### repic
 
 随机图片（正则版）。
@@ -86,12 +81,11 @@ name是大小写不敏感的。
 
 regexp 是要匹配的正则表达式，随机抽取一张名字符合regexp表达式的图片发送。
 
-
 ### savepic
 
 保存图片，用法如下：
 
-> /savepic name pic [-d] [-g] [-ac]
+> /savepic [-g] [-ac] name pic
 
 name 是 pic 要保存在图库中的名字，如果不是以 .png/.jpg/.gif 结尾，则自动添加 .jpg 后缀。
 
@@ -100,17 +94,42 @@ name 是 pic 要保存在图库中的名字，如果不是以 .png/.jpg/.gif 结
 
 | 选项 | 作用 | 权限 |
 | :-: | :-: | :-: |
-| d | 把存图变成删图 | 管理员 |
 | g | 把作用域变成全局 | Fran/99/Yan |
 | ac | 忽略相似图片 | 群员 |
 
-#### 示例
-```
-/savepic 好
-```
+#### 示例(savepic)
+
+> /savepic 好
+
 把图片存为“好.jpg”，“.jpg”是自动添加的。
 
-```
-/savepic -d 好
-```
-删除群图中的“好.jpg”。
+> /savepic -g 草.png
+
+把图片存为全局图“草.png”，需要有权限。
+
+> /savepic -ac 草.png
+
+通常情况下，如果图库中已经有一张和你要保存的图片相似度超过一定程度的图片，会拒绝保存。
+使用 -ac 可以忽略这个检查，强制保存。
+
+### rmpic
+
+删除图片。
+
+> /rmpic [-g] name
+
+| 选项 | 作用 | 权限 |
+| :-: | :-: | :-: |
+| g | 把作用域变成全局 | Fran/99/Yan |
+
+群管理员和储存图片的人可以删除本群的图片。
+
+#### 示例(rmpic)
+
+> /rmpic 草.png
+
+删除本群的草.png图片。
+
+> /rmpic -g 草.png
+
+删除全局的草.png图片。
